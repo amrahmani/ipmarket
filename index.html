@@ -1,92 +1,44 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>IPMARKET — Demo Marketplace</title>
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>IPMARKET — Online IP Marketplace</title><link rel="stylesheet" href="assets/style.css"/></head>
 <body data-page="home">
   <div class="container">
     <header class="header">
-      <div class="brand">
-        <div class="logo">IP</div>
-        <div>
-          <div style="font-weight:800">IPMARKET</div>
-          <small style="color:var(--muted)">Demo — Online IP Marketplace</small>
-        </div>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="market.html">Marketplace</a>
-        <a href="seller.html">Seller</a>
-        <a href="admin.html">Admin</a>
-        <a href="about.html">About</a>
-      </nav>
+      <div class="brand"><div class="logo">IP</div><div><div style="font-weight:800">IPMARKET</div><small class="muted">Online IP Marketplace</small></div></div>
+      <nav><a href="index.html">Home</a><a href="market.html">Marketplace</a><a href="seller.html">Seller</a><a href="admin.html">Admin</a><a href="about.html">About</a></nav>
     </header>
 
     <section class="hero">
       <div class="left">
-        <h1>Unlock dormant innovations — IP commercialisation made discoverable</h1>
-        <p class="lead">Demo site following the feasibility analysis: niche-first marketplace, AI summaries, curated listings, and trust-building features for IP owners and buyers.</p>
-        <div style="margin-top:12px">
-          <a class="btn btn-primary" href="market.html">Browse marketplace</a>
-          <a class="btn" href="seller.html" style="margin-left:8px;">List your IP</a>
-        </div>
-
+        <h1>Unlock dormant innovations — commercialise intellectual property</h1>
+        <p class="lead">Niche-first marketplace with curated listings, AI-assisted lay summaries, and trust-building tools for universities, inventors and SMEs.</p>
+        <div style="margin-top:12px"><a class="btn btn-primary" href="market.html">Browse listings</a><a class="btn" href="seller.html" style="margin-left:8px">List an asset</a></div>
         <div class="panel" style="margin-top:14px">
-          <div class="kpi">
-            <div class="tile"><strong id="k_listings">0</strong><div style="color:var(--muted)">Listings</div></div>
-            <div class="tile"><strong id="k_inquiries">0</strong><div style="color:var(--muted)">Inquiries (30d)</div></div>
-            <div class="tile"><strong id="k_matches">0</strong><div style="color:var(--muted)">Matches</div></div>
-          </div>
-          <div style="margin-top:12px;color:var(--muted)">Start with a curated seed inventory, add AI lay summaries and basic valuation hints, and progressively introduce manual matchmaking to build trust.</div>
+          <div class="kpi"><div class="tile"><strong id="k_listings">0</strong><div class="muted">Listings</div></div><div class="tile"><strong id="k_inquiries">0</strong><div class="muted">Inquiries (30d)</div></div><div class="tile"><strong id="k_matches">0</strong><div class="muted">Matches</div></div></div>
+          <div class="note">Start with curated inventory, provide AI-assisted summaries, and offer manual matchmaking to build references and trust.</div>
         </div>
       </div>
 
-      <aside style="width:340px">
-        <div class="panel card">
-          <h3 style="margin-top:0">Featured listing</h3>
-          <div style="display:flex;gap:12px;align-items:center">
-            <div class="thumb">Patent</div>
-            <div>
-              <div style="font-weight:700">Solar panel efficiency booster</div>
-              <div style="color:var(--muted);margin-top:6px">AI summary: increases PV efficiency via nano-texturing and layering. Suitable for thin-film manufacturing improvements.</div>
-              <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
-                <div style="font-weight:700">Est. $50k–$120k</div>
-                <div><a class="btn btn-primary" href="listing.html?id=1">View</a></div>
-              </div>
-            </div>
-          </div>
-          <small style="display:block;margin-top:10px;color:var(--muted)">Demo content only.</small>
+      <aside style="width:360px">
+        <div class="panel card" id="recs">
+          <!-- recommended for you populated by JS -->
         </div>
       </aside>
     </section>
 
     <section class="panel">
-      <h2 style="margin-top:0">Why IPMARKET?</h2>
-      <p style="color:var(--muted)">Many registered IP assets remain unused. This demo follows the feasibility analysis: start niche, provide AI-driven summaries, curate inventory, and introduce monetisation with premium features.</p>
-      <div class="grid-single" style="margin-top:12px">
-        <div class="card">
-          <h4 style="margin:0">Market opportunity</h4>
-          <p style="color:var(--muted);margin-top:8px">Large share of patents are never commercialised — creating a supply-side opportunity to help universities and inventors find buyers or licensees.</p>
-        </div>
-        <div class="card">
-          <h4 style="margin:0">Trust & onboarding</h4>
-          <p style="color:var(--muted);margin-top:8px">Curated onboarding and manual matchmaking in early stages increase conversion and build reputation faster than a pure marketplace feed.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel">
-      <h3 style="margin-top:0">Recent listings</h3>
+      <h2 style="margin-top:0">Marketplace preview</h2>
+      <p class="muted">Filter, search, and view curated listings. Each listing includes an AI-assisted lay summary and an indicative valuation range.</p>
+      <div style="margin-top:12px"><div class="searchbar"><input id="q" placeholder="Search title, summary or filing..." /><select id="type" class="filter"><option value="">All types</option><option>Patent</option><option>Design</option><option>Software</option></select><select id="industry" class="filter"><option value="">All industries</option><option>Energy</option><option>Materials</option><option>IoT</option><option>MedTech</option><option>Water</option><option>Manufacturing</option><option>LegalTech</option></select><button id="btn_filter" class="btn btn-primary">Apply filters</button></div></div>
       <div id="listings" class="listing-grid" style="margin-top:12px"></div>
-      <div style="margin-top:12px;color:var(--muted)">Tip: Click a listing to see AI summary and valuation features.</div>
     </section>
 
-    <footer class="footer">
-      Demo site generated for presentation purposes. Content adapted from the project's feasibility analysis.
-    </footer>
+    <section class="panel grid-single">
+      <div class="card"><h4 style="margin:0">Why IPMARKET</h4><p class="muted" style="margin-top:8px">Many IP assets remain unused. Focus on quality-first curation, AI summaries to reduce search costs, and early manual matchmaking to secure reference deals.</p></div>
+      <div class="card"><h4 style="margin:0">Monetisation</h4><p class="muted" style="margin-top:8px">Featured listings, paid editorial summaries, institutional subscriptions and success commissions for intermediated deals.</p></div>
+    </section>
+
+    <footer class="footer">IPMARKET — Online IP Marketplace. <div class="footer-links"><a href="about.html">About</a><a href="admin.html">Admin</a></div></footer>
   </div>
 
   <script src="assets/app.js"></script>

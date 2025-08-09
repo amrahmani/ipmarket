@@ -1,89 +1,51 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Listing — IPMARKET Demo</title>
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body data-page="listing">
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Listing — IPMARKET</title><link rel="stylesheet" href="assets/style.css"/></head><body data-page="listing">
   <div class="container">
-    <header class="header">
-      <div class="brand">
-        <div class="logo">IP</div>
-        <div>
-          <div style="font-weight:800">IPMARKET</div>
-          <small style="color:var(--muted)">Listing</small>
-        </div>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="market.html">Marketplace</a>
-        <a href="seller.html">Seller</a>
-        <a href="admin.html">Admin</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
+    <header class="header"><div class="brand"><div class="logo">IP</div><div><div style="font-weight:800">IPMARKET</div><small class="muted">Listing</small></div></div><nav><a href="index.html">Home</a><a href="market.html">Marketplace</a><a href="seller.html">Seller</a><a href="admin.html">Admin</a><a href="about.html">About</a></nav></header>
 
     <section class="panel">
       <div style="display:flex;gap:12px;align-items:flex-start">
         <div style="flex:1">
           <h2 id="lst_title">Title</h2>
-          <div style="color:var(--muted);margin-top:6px">Type: <span id="lst_type"></span> • Industry: <span id="lst_ind"></span> • Jurisdiction: <span id="lst_jur"></span></div>
+          <div class="muted" style="margin-top:6px">Type: <span id="lst_type"></span> • Industry: <span id="lst_ind"></span> • Jurisdiction: <span id="lst_jur"></span></div>
           <div class="panel" style="margin-top:12px">
             <h4 style="margin:0">AI lay summary</h4>
-            <p id="lst_sum" style="color:var(--muted);margin-top:8px"></p>
-            <div style="margin-top:8px;display:flex;gap:12px;align-items:center">
-              <div class="badge">AI valuation</div>
-              <div id="lst_val" style="font-weight:700"></div>
-              <div style="margin-left:8px;color:var(--muted)"> <span id="ai_score"></span> <small id="ai_note" style="color:var(--muted)"></small></div>
+            <p id="lst_sum" class="muted" style="margin-top:8px"></p>
+            <div style="margin-top:8px;display:flex;gap:12px;align-items:center"><div class="badge">AI valuation</div><div id="lst_val" style="font-weight:700"></div>
+              <div style="margin-left:8px;color:var(--muted)"><span id="ai_score"></span> <small id="ai_note"></small></div>
             </div>
+            <div style="margin-top:8px" id="valuation_chart" class="chart"></div>
+            <div style="margin-top:10px"><button id="gen_summary" class="btn btn-primary">Generate improved AI summary</button></div>
+            <div id="ai_generated_summary" class="panel" style="margin-top:10px"></div>
           </div>
 
           <div class="panel" style="margin-top:12px">
-            <h4 style="margin:0">Full mock details</h4>
+            <h4 style="margin:0">Full listing data</h4>
             <table class="table" style="margin-top:8px">
+              <tr><th>Filing</th><td id="lst_file"></td></tr>
+              <tr><th>Owner</th><td id="lst_owner"></td></tr>
               <tr><th>Filed</th><td>2018</td></tr>
               <tr><th>Expiry (est.)</th><td>2038</td></tr>
-              <tr><th>Owner</th><td>University / Inventor</td></tr>
               <tr><th>Status</th><td>Granted</td></tr>
             </table>
           </div>
-
         </div>
 
-        <aside style="width:320px">
+        <aside style="width:360px">
           <div class="card">
-            <div style="display:flex;gap:10px;align-items:center">
-              <div class="thumb">Patent</div>
-              <div>
-                <div style="font-weight:700" id="lst_rail_title">Title</div>
-                <div style="color:var(--muted);margin-top:6px" id="lst_rail_sub">Est. value</div>
-              </div>
-            </div>
-
-            <div style="margin-top:12px">
-              <button class="btn btn-primary" onclick="mockInquiry()">Contact seller</button>
-              <button class="btn" style="margin-left:8px" onclick="window.print()">Download summary (PDF)</button>
-            </div>
-
-            <div style="margin-top:12px;color:var(--muted);font-size:13px">
-              <strong>Monetisation (demo)</strong>
-              <div style="margin-top:6px;color:var(--muted)">Upgrade to featured listing ($199), or paid editorial summary ($79) — mock prices for presentation.</div>
-            </div>
+            <div style="display:flex;gap:10px;align-items:center"><div class="thumb">Patent</div><div><div style="font-weight:700" id="lst_rail_title">Title</div><div class="muted" id="lst_rail_sub">Est. value</div></div></div>
+            <div style="margin-top:12px"><button class="btn btn-primary" onclick="mockInquiry()">Contact seller</button><button class="btn" style="margin-left:8px" onclick="window.print()">Download summary</button></div>
+            <div style="margin-top:12px" class="note"><strong>Monetisation</strong><div class="muted" style="margin-top:6px">Featured listing $199, editorial summary $79 — illustrative only.</div></div>
           </div>
 
-          <div class="card" style="margin-top:12px">
-            <h4 style="margin:0">Trust</h4>
-            <div style="margin-top:8px;color:var(--muted)">Verification badges, manual vetting, and sample NDA flow reduce friction for early buyers.</div>
-          </div>
+          <div class="card" style="margin-top:12px"><h4 style="margin:0">Trust</h4><div class="muted" style="margin-top:8px">Verification badges and manual vetting help buyers trust listed assets. Sample badge: <span class="badge">Verified transfer</span></div></div>
         </aside>
       </div>
     </section>
 
-    <footer class="footer">Demo site — not a live marketplace.</footer>
+    <footer class="footer">IPMARKET — contact and valuation are illustrative only.</footer>
   </div>
 
+  <div id="nda_modal" class="modal"><div class="box"><div style="display:flex;justify-content:space-between;align-items:center"><h3 style="margin:0">Confidentiality agreement (preview)</h3><button class="close" onclick="document.getElementById('nda_modal').style.display='none'">✕</button></div><p class="muted">Acceptance required before contacting seller. For legal use integrate server-side NDA flow and signature capture.</p><div style="max-height:300px;overflow:auto;border:1px solid rgba(255,255,255,0.02);padding:8px;border-radius:8px;margin-top:8px;background:rgba(255,255,255,0.01)"><strong>Sample NDA (summary)</strong><p class="muted">1) Confidential information; 2) Purpose limitation; 3) Term 2 years; 4) No transfer of IP rights; 5) Remedies for breach.</p></div><div style="margin-top:12px;display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('nda_modal').style.display='none'">Cancel</button><button class="btn btn-primary" style="margin-left:8px" onclick="acceptNDA()">Accept & Contact</button></div></div></div>
+
   <script src="assets/app.js"></script>
-</body>
-</html>
+</body></html>
