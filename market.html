@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketplace — IPMARKET Demo</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="home">
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">IP</div>
+        <div>
+          <div style="font-weight:800">IPMARKET</div>
+          <small style="color:var(--muted)">Marketplace</small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="market.html">Marketplace</a>
+        <a href="seller.html">Seller</a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <h2 style="margin-top:0">Marketplace</h2>
+      <div class="searchbar">
+        <input placeholder="Search title or summary..." id="q" />
+        <select id="type" class="filter"><option value="">All types</option><option>Patent</option><option>Design</option><option>Software</option></select>
+        <select id="industry" class="filter"><option value="">All industries</option><option>Energy</option><option>Materials</option><option>IoT</option><option>MedTech</option><option>Water</option><option>Manufacturing</option><option>LegalTech</option></select>
+        <button id="btn_filter" class="btn btn-primary">Apply</button>
+      </div>
+
+      <div id="listings" class="listing-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h3 style="margin-top:0">How AI helps (demo)</h3>
+      <p style="color:var(--muted)">Each listing includes a concise lay summary and an indicative value range produced by the demo AI. In production these would be generated with a controlled model and domain prompts.</p>
+    </section>
+
+    <footer class="footer">
+      Use this demo to illustrate the marketplace flow. Not for commercial use.
+    </footer>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

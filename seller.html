@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seller Dashboard — IPMARKET Demo</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="seller">
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">IP</div>
+        <div>
+          <div style="font-weight:800">IPMARKET</div>
+          <small style="color:var(--muted)">Seller dashboard</small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="market.html">Marketplace</a>
+        <a href="seller.html">Seller</a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <h2 style="margin-top:0">Your seller dashboard (demo)</h2>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="card" style="flex:1">
+          <h4 style="margin:0">Create a new listing</h4>
+          <p style="color:var(--muted);margin-top:6px">Fill guided fields — the demo will not persist listings but simulates the experience.</p>
+          <div style="margin-top:8px">
+            <input placeholder="Title" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <input placeholder="Type (Patent/Design/Software)" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+              <input placeholder="Industry" style="width:160px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+            </div>
+            <textarea placeholder="Short summary (AI will refine)" style="width:100%;margin-top:8px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" rows="4"></textarea>
+            <div style="margin-top:8px">
+              <button class="btn btn-primary">Create (demo)</button>
+            </div>
+          </div>
+        </div>
+
+        <aside style="width:320px">
+          <div class="card">
+            <h4 style="margin:0">Seller metrics</h4>
+            <div style="margin-top:8px;color:var(--muted)"><strong id="created_listings">0</strong> active listings</div>
+            <div style="margin-top:8px;color:var(--muted)"><strong>5</strong> inquiries (30d)</div>
+            <div style="margin-top:8px;color:var(--muted)"><strong>2</strong> matches</div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h4 style="margin:0">Pricing & offers</h4>
+            <div style="margin-top:8px;color:var(--muted)">Upgrade to featured listing ($199), Editorial summary ($79/year for multiple listings), or subscription for institution accounts.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">Seller demo — not a real account system.</footer>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

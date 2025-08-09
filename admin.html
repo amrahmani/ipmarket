@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — IPMARKET Demo</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="admin">
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">IP</div>
+        <div>
+          <div style="font-weight:800">IPMARKET</div>
+          <small style="color:var(--muted)">Admin</small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="market.html">Marketplace</a>
+        <a href="seller.html">Seller</a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <h2 style="margin-top:0">Admin / Metrics (demo)</h2>
+      <div style="display:flex;gap:12px">
+        <div style="flex:1">
+          <div class="card">
+            <h4 style="margin:0">Key metrics</h4>
+            <table id="admin_table" class="table" style="margin-top:8px"></table>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h4 style="margin:0">Recent inquiries (sample)</h4>
+            <ul style="margin-top:8px;color:var(--muted)">
+              <li>Buyer A in Energy — inquiry about Solar panel efficiency booster</li>
+              <li>SME in IoT — interest in Modular IoT sensor housing</li>
+              <li>University tech transfer — valuation request for wearable cardiac monitor</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside style="width:320px">
+          <div class="card">
+            <h4 style="margin:0">Actions</h4>
+            <div style="margin-top:8px;color:var(--muted)">Mark listings as featured, vet sellers, or export a CSV of listings for outreach (demo only).</div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h4 style="margin:0">Notes</h4>
+            <div style="margin-top:8px;color:var(--muted)">This admin view demonstrates the kind of early KPIs to track: listings, inquiries, matches, and average valuation.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">Admin demo — for presentation only.</footer>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
